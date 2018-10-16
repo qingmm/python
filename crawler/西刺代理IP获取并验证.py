@@ -29,7 +29,6 @@ def getProxyIp():
     return ip_list
 
 def ipTest(ip):
-        #访问网址
     url = 'https://www.whatismyip.com/' # 能够检测出本机ip
     proxy = {'http':ip}    
     proxy_support = request.ProxyHandler(proxy) # 创建ProxyHandler    
