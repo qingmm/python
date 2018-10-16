@@ -1,3 +1,7 @@
+'''
+能够自动抓取西刺代理IP并验证是否有效，输出有效IP，但是很遗憾，我试了几次都没有效果。
+运行环境：python3
+'''
 #-*-coding:utf-8-*-
 from bs4 import BeautifulSoup
 import requests
