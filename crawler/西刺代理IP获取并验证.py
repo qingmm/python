@@ -39,10 +39,19 @@ def ipTest(ip):
     html = response.read().decode("utf-8") # 读取相应信息并解码
     pattern = re.compile(ip.split(':')[0]) # 定义正则表达式，若html中查找到当前ip，则说明代理ip有效
     if pattern.findall(html):
-        print (ip, ' is success!')
+        print (ip, '  has successed!')
         with codecs.open(sys.path[0] + os.sep + 'test.html', 'w', 'utf-8') as f:
             f.write(html)
-
+        return True
+    return False
+def idTest(ip):
+    url = 'http://checkip.amazonaws.com/' # 返回结果即为本机IP
+    curip = requests.get(url).text.strip()
+    if ip == curip:
+        print (ip, ' has successed!')
+        return True
+    return False
+    
 if __name__ == '__main__':
     ip_list = getProxyIp()
     for ip in ip_list:
